@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
+    public int speed = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,6 @@ public class bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0, 0, 1 * Time.deltaTime);
+        transform.Translate(0, 0, speed * Time.deltaTime);
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class fire : MonoBehaviour
 {
     public GameObject bullet;
+    public Vector3 offset = new Vector3(0, 2, 3);
     // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +16,10 @@ public class fire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
-            GameObject bClone = Instantiate(bullet, transform.position, transform.rotation);
+            GameObject bClone = Instantiate(bullet, transform.position + offset, transform.rotation);
+            Destroy(bClone, 10);
         }
     }
 }
