@@ -5,6 +5,7 @@ using UnityEngine;
 public class KillBlock : MonoBehaviour
 {
     public Vector3 lapSart;
+    public int health = 100;
 
     // Start is called before the first frame update
     void Start()

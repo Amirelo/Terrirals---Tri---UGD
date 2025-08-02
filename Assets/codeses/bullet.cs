@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
-    public int speed = 1;
+    public int speed = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +18,17 @@ public class bullet : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        Destroy(collision.gameObject);
+        KillBlock script = collision.gameObject.GetComponent<KillBlock>();
+        if (script != null)
+        {
+            script.health = script.health - 1000000;
+            print(script.health);
+            if (script.health <= 0)
+            {
+                Destroy(script.gameObject);
+            }
+            Destroy(gameObject);
+            //Destroy(collision.gameObject);
+        }
     }
 }
